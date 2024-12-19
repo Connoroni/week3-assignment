@@ -2,6 +2,6 @@
 
 Poison Swamp Damage Clicker
 
-Reflection
+**Reflection**
 
-Sources
+**Sources**
