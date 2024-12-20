@@ -14,34 +14,49 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 15vh;
 }
 
 #buttonAndData {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 #bigButton {
   border-radius: 50%;
-  height: 5em;
-  width: 5em;
+  height: 7.5em;
+  width: 7.5em;
+  color: transparent;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-image: url("https://pngimg.com/d/cookie_PNG13659.png");
+  background-position: center;
+  background-size: cover;
+  border: transparent;
+}
+#bigButton:hover {
+  color: white;
 }
 .cookie-info {
   font-size: 3rem;
 }
-#rightData {
-  font-size: 1.5rem;
-}
 
 #notEnough {
   display: none;
+  text-align: center;
+  color: red;
 }
 
 #shopBox {
-  background-color: peru;
+  color: white;
+  background-color: darkslategray;
   border-radius: 0.5rem;
   margin-left: 2rem;
   width: 45rem;
-  height: 25rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -52,9 +67,38 @@ main {
   justify-content: space-between;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  background-color: red;
+  margin-bottom: 0.1rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 5%;
+  font-size: 1.25rem;
+  background-color: slategray;
+  color: black;
 }
 
 .upgrade-button {
-  width: 200px;
+  width: 12rem;
+  background-color: darkslategray;
+  border: transparent;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1rem;
+  border-radius: 75%;
+}
+.upgrade-button:hover {
+  background-color: white;
+  color: darkslategray;
+}
+
+footer {
+  background-color: grey;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
