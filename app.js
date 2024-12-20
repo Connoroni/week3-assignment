@@ -1,5 +1,5 @@
 let gameData = {
-  cookieCount: 0,
+  cookieCount: 1000000,
   cookiesPerSec: 0,
   cookiesPerClick: 1,
 };
@@ -123,3 +123,13 @@ setInterval(() => {
   const jsonData = JSON.stringify(gameData);
   localStorage.setItem("LocalData", jsonData);
 }, 1000);
+
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", function () {
+  gameData = {
+    cookieCount: 0,
+    cookiesPerSec: 0,
+    cookiesPerClick: 1,
+  };
+  alert("Game data has been reset");
+});
