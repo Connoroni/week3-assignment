@@ -5,18 +5,56 @@
 }
 
 header {
-  background-color: aliceblue;
+  background-color: hotpink;
+  height: 15rem;
 }
 
 main {
   background-color: papayawhip;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#buttonAndData {
+  display: flex;
+  justify-content: center;
+}
+#bigButton {
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+}
+#cookieCount {
+  font-size: 3rem;
+}
+#rightData {
+  font-size: 1.5rem;
+}
+
+#notEnough {
+  display: none;
 }
 
 #shopBox {
   background-color: peru;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  width: 45rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .shop-item {
   display: flex;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   background-color: red;
+}
+
+.upgrade-button {
+  width: 200px;
 }
