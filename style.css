@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-header {
+/* header {
   background-color: hotpink;
   height: 15rem;
-}
+} */
 
 main {
   background-color: papayawhip;
@@ -25,7 +25,7 @@ main {
   height: 5em;
   width: 5em;
 }
-#cookieCount {
+.cookie-info {
   font-size: 3rem;
 }
 #rightData {

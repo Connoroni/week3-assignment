@@ -1,20 +1,20 @@
 let gameData = {
-  cookieCount: 99,
+  cookieCount: 0,
   cookiesPerSec: 0,
   cookiesPerClick: 1,
-  upgrade1: 0,
-  upgrade2: 0,
-  upgrade3: 0,
-  upgrade4: 0,
-  upgrade5: 0,
-  upgrade6: 0,
-  upgrade7: 0,
-  upgrade8: 0,
-  upgrade9: 0,
-  upgrade10: 0,
-  // upgrade numbers are showing the total number the user has of each upgrade
 };
 //! Get gameData from local storage here
+const retrievedData = localStorage.getItem("LocalData");
+const saveData = JSON.parse(retrievedData);
+if (saveData != null) {
+  gameData = saveData;
+} else {
+  gameData = {
+    cookieCount: 0,
+    cookiesPerSec: 0,
+    cookiesPerClick: 1,
+  };
+}
 //if (saveData != null) {gameData = saveData}
 //else {gameData = {OBJECT TO DECLARE GAMEDATA HERE}}
 
@@ -35,16 +35,16 @@ async function getShopUpgrades() {
 }
 getShopUpgrades();
 
-// upgradesArray[0][0].name = newName;
-// upgradesArray[0][1].name = newName;
-// upgradesArray[0][2].name = newName;
-// upgradesArray[0][3].name = newName;
-// upgradesArray[0][4].name = newName;
-// upgradesArray[0][5].name = newName;
-// upgradesArray[0][6].name = newName;
-// upgradesArray[0][7].name = newName;
-// upgradesArray[0][8].name = newName;
-// upgradesArray[0][9].name = newName;
+// upgradesArray[0][0].name = "newName";
+// upgradesArray[0][1].name = "newName";
+// upgradesArray[0][2].name = "newName";
+// upgradesArray[0][3].name = "newName";
+// upgradesArray[0][4].name = "newName";
+// upgradesArray[0][5].name = "newName";
+// upgradesArray[0][6].name = "newName";
+// upgradesArray[0][7].name = "newName";
+// upgradesArray[0][8].name = "newName";
+// upgradesArray[0][9].name = "newName";
 
 //You would not believe how long it took me to realise that my problem was that the .push makes an array within another array so each item is actually upgradesArray[0][i]
 
@@ -97,12 +97,14 @@ async function renderUpgrades() {
 const cookieCountDisplay = document.getElementById("cookieCount");
 cookieCountDisplay.textContent = `Cookie count: ${gameData.cookieCount}`;
 const cookieSecDisplay = document.getElementById("cookiesPerSec");
-cookieSecDisplay.textContent = `Cookies per second ${gameData.cookiesPerSec}`;
-const cookieClickDisplay = document.getElementById("cookiesPerClick");
-cookieClickDisplay.textContent = `Cookies per click: ${gameData.cookiesPerClick}`;
+cookieSecDisplay.textContent = `Cookies per second: ${gameData.cookiesPerSec}`;
+// const cookieClickDisplay = document.getElementById("cookiesPerClick");
+// cookieClickDisplay.textContent = `Cookies per click: ${gameData.cookiesPerClick}`;
 
 function updateCookies() {
   cookieCountDisplay.textContent = `Cookie count: ${gameData.cookieCount}`;
+  cookieSecDisplay.textContent = `Cookies per second: ${gameData.cookiesPerSec}`;
+  // cookieClickDisplay.textContent = `Cookies per click: ${gameData.cookiesPerClick}`;
 }
 
 const bigButton = document.getElementById("bigButton");
@@ -118,5 +120,6 @@ function bigButtonHandler() {
 setInterval(() => {
   gameData.cookieCount = gameData.cookieCount + gameData.cookiesPerSec;
   updateCookies();
-  //!save to local storage goes here
+  const jsonData = JSON.stringify(gameData);
+  localStorage.setItem("LocalData", jsonData);
 }, 1000);
