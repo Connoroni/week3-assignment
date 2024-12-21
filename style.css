@@ -9,13 +9,17 @@
   height: 15rem;
 } */
 
+body {
+  height: 100vh;
+}
+
 main {
-  background-color: papayawhip;
+  background-color: #fee2b0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 15vh;
+  padding-bottom: 5vh;
 }
 
 #buttonAndData {
@@ -47,12 +51,14 @@ main {
 #notEnough {
   display: none;
   text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: red;
 }
 
 #shopBox {
   color: white;
-  background-color: darkslategray;
+  background-color: #d9a35c;
   border-radius: 0.5rem;
   margin-left: 2rem;
   width: 45rem;
@@ -60,6 +66,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 0.2rem;
+}
+
+#upgradeTitle {
+  padding-bottom: 0.2rem;
 }
 
 .shop-item {
@@ -74,7 +85,7 @@ main {
   padding-bottom: 0.5rem;
   border-radius: 5%;
   font-size: 1.25rem;
-  background-color: slategray;
+  background-color: #f6ce86bf;
   color: black;
 }
 
@@ -97,8 +108,17 @@ footer {
   background-color: grey;
   position: fixed;
   width: 100%;
-  height: 10vh;
+  height: 7.5vh;
   bottom: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+#resetButton {
+  height: 2rem;
+  border-radius: 20%;
+  border: transparent;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
