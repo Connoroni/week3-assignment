@@ -17,6 +17,7 @@ main {
   background-color: #fee2b0;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   padding-bottom: 5vh;
@@ -37,12 +38,16 @@ main {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   background-image: url("https://pngimg.com/d/cookie_PNG13659.png");
+  background-color: transparent;
   background-position: center;
   background-size: cover;
-  border: transparent;
+  border: transparent 0.25em;
 }
 #bigButton:hover {
   color: white;
+  height: 7.75em;
+  width: 7.5em;
+  border: 0em;
 }
 .cookie-info {
   font-size: 3rem;
@@ -121,4 +126,27 @@ footer {
   border: transparent;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+@media (min-width: 2550px) {
+  main {
+    padding-bottom: 40vh;
+  }
+  #buttonAndData {
+    padding-bottom: 10vh;
+  }
+}
+
+@media (max-width: 1024px) {
+  #buttonAndData {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  #shopBox {
+    max-width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
